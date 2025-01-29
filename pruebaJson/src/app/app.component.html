@@ -1,0 +1,26 @@
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th class="col">ID</th>
+      <th class="col">Nombre</th>
+      <th class="col">Stock</th>
+      <th class="col">Precio</th>
+      <th class="col">URL Amigable</th>
+      <th class="col">Imagen</th>
+      <th class="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let postre of postres">
+      <th scope="row">{{ postre.id }}</th>
+      <td>{{ postre.nombre }}</td>
+      <td>{{ postre.stock }}</td>
+      <td>{{ postre.precio }}</td>
+      <td>{{ postre.url }}</td>
+      <td>
+        <img src="assets/img/{{ postre.img }}" width="30px" class="img-fluid" alt="{{ postre.nombre }}">
+      </td>
+      <td>{{ postre.fecha }}</td>
+    </tr>
+  </tbody>
+</table>

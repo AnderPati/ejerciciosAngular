@@ -1,0 +1,12 @@
+<div class="carta">
+    <p>Nombre: <span id="nombre">{{usuarioData.nombre}}</span></p>
+    <p>Apellido: <span id="apellido">{{usuarioData.apellido}}</span></p>
+    <p>DNI: <span id="dni">{{usuarioData.dni}}</span></p>
+    <p>CheckIn: <span id="checkin">{{usuarioData.checkin}}</span></p>
+    <p>CheckOut: <span id="checkout">{{usuarioData.checkout}}</span></p>
+    <p>Room number: <span id="roomnumber">{{usuarioData.roomnumber}}</span></p>
+    <div>
+        <button (click)="editarUsuario()">Editar</button>
+        <button (click)="eliminarUsuario()">Eliminar</button>
+    </div>
+</div>

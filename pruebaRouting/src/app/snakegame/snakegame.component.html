@@ -1,0 +1,9 @@
+<div style="text-align: center;">
+    <canvas id="snake" width="608" height="608"></canvas>
+    <div *ngIf="gameOver" class="game-over">
+      <h1>¡Game Over!</h1>
+      <p>Puntos finales: {{ score }}</p>
+      <button (click)="startGame()">Volver a Jugar</button>
+    </div>
+  </div>
+  

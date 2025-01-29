@@ -1,0 +1,30 @@
+<h1>USUARIOS DEL HOTEL</h1>
+
+<button id="aniadirVer" (click)="verFormulario($event)">Añadir nuevo usuario</button>
+
+<div class="cartasUsuarios" *ngIf="!mostrar">
+  <app-users *ngFor="let usuario of usuariosArray; let i = index" [usuarioData]="usuario" (editar)="editarVista(i)" (eliminar)="eliminarUsuario(i)"></app-users>
+</div>
+
+<div class="formulario" *ngIf="mostrar">
+  <label for="nombreIn">Nombre:</label>
+  <input id="nombreIn" type="text" #nombre [(ngModel)]="dataEdit.nombre">
+
+  <label for="apellidoIn">Apellido:</label>
+  <input id="apellidoIn" type="text" #apellido [(ngModel)]="dataEdit.apellido">
+
+  <label for="dniIn">DNI:</label>
+  <input id="dniIn" type="text" #dni [(ngModel)]="dataEdit.dni">
+
+  <label for="checkinIn">CheckIn:</label>
+  <input id="checkinIn" type="text" #checkin [(ngModel)]="dataEdit.checkin">
+
+  <label for="checkoutIn">CheckOut:</label>
+  <input id="checkoutIn" type="text" #checkout [(ngModel)]="dataEdit.checkout">
+
+  <label for="roomIn">Room Number:</label>
+  <input id="roomIn" type="text" #room [(ngModel)]="dataEdit.roomnumber">
+
+  <button *ngIf="!editando" (click)="aniadirUsuario(nombre.value, apellido.value, dni.value, checkin.value, checkout.value, room.value)">Añadir usuario</button>
+  <button *ngIf="editando" (click)="editarUsuario(nombre.value, apellido.value, dni.value, checkin.value, checkout.value, room.value)">Editar usuario</button>
+</div>

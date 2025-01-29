@@ -1,0 +1,22 @@
+.carta{
+    display: flex;
+    flex-direction: column;
+    background-color: #212023;
+    border: 1px solid rgb(159, 159, 159);
+    border-radius: 10px;
+    padding: 0 20px 15px;
+    margin: 20px;
+    width: 250px;
+    p{
+        font-weight: bold;
+
+        span{
+            font-weight: normal;
+        }
+    }
+    button{
+        width: 100%;
+        margin-bottom: 5px;
+        
+    }
+}

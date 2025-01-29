@@ -1,0 +1,30 @@
+canvas {
+    display: block;
+    margin: 20px auto;
+    background-color: #333;
+    border: 1px solid #fff;
+  }
+  
+  .game-over {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .game-over h1 {
+    color: red;
+  }
+  
+  .game-over button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .game-over button:hover {
+    background-color: darkgreen;
+  }
+  

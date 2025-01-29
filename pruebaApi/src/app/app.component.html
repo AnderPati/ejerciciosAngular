@@ -1,0 +1,25 @@
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th>Indice</th>
+      <th>Common name</th>
+      <th>Oficial name</th>
+      <th>Capital</th>
+      <th>Region</th>
+      <th>Subregion</th>
+      <th>Population</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="datos">
+    <tr *ngFor="let elemento of datos; let i = index">
+      <td><p class="fw-normal mb-1">{{ i }}</p></td>
+      <td>{{ elemento.name.common }}</td>
+      <td>{{ elemento.name.official }}</td>
+      <td>{{ elemento.capital }}</td>
+      <td>{{ elemento.region }}</td>
+      <td>{{ elemento.subregion }}</td>
+      <td>{{ elemento.population }}</td>
+    </tr>
+  </tbody>
+</table>

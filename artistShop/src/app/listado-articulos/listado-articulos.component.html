@@ -1,0 +1,14 @@
+<div class="card-container">
+    <div class="card" *ngFor="let producto of productos; let i = index">
+      <img class="card-img-top" src="{{_articulosService.url}}/{{producto.imagen}}" alt="{{producto.nombre}}">
+      <div class="card-block">
+        <h5 class="card-title">{{producto.nombre}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+      </div>
+      <div class="card-footer">
+        <span class="price">{{producto.precio}} €</span>
+        <a href="#" class="btn">Añadir a la cesta</a>
+      </div>
+    </div>
+  </div>
+  

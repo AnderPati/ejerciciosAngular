@@ -1,0 +1,42 @@
+*{
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+#aniadirVer{
+    color: black;
+    margin-left: 10px;
+    height: 30px;
+    background-color: rgb(114, 129, 160);
+    border: 1px solid #454448;
+    border-radius: 5px;
+}
+
+.cartasUsuarios{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formulario{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    label{
+        margin-top: 10px;
+    }
+    input{
+        color: black;
+    }
+    button{
+        margin-top: 5px;
+        color: black;
+        height: 30px;
+        background-color: rgb(114, 160, 128);
+        border: 1px solid #454448;
+        border-radius: 5px;
+    }
+}
