@@ -1,0 +1,98 @@
+<header>
+  <nav>
+    <span id="textoSup"></span>
+    <!-- le asigno un change para que llame a la funcion 'seleccionarTipoMenu' cada vez que cambia y mandarle asi el valor de la opcion -->
+    <select id="tipoM" *ngIf="rutaActual === 'menus'" (change)="seleccionarTipoMenu($event)">
+      <option value="" selected="true" disabled="disabled">
+        Seleccione el menu
+      </option>
+      <option value="basico">MENÚ BÁSICO</option>
+      <option value="especial">MENÚ ESPECIAL</option>
+    </select>
+    <!-- link a pedido mediante routing-->
+    <a [routerLink]="['/pedido']" id="elemCompra">VER LISTA PRODUCTOS SELECCIONADOS</a>
+  </nav>
+</header>
+
+<!-- si la ruta actual es platos muestro los platos -->
+<div id="opcionPlatos" *ngIf="rutaActual === 'platos'">
+  <h2 class="platosMenu">PLATOS</h2>
+  <section>
+    <!-- recorro el array de productos y muestro cada uno de ellos -->
+    <div class="card" *ngFor="let producto of productos">
+      <img src="../../../assets/{{ producto.imagen }}" alt="" />
+      <p>{{ producto.titulo }}</p>
+      <p>
+        <span> {{ producto.precio }} </span>€
+
+        <br />
+        <!-- llamo a la funcion 'agregar' y le paso el producto que se ha seleccionado -->
+        <input type="button" value="Añadir a lista" (click)="agregar(producto)"/>
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- si la ruta actual es menus muestro los menus -->
+<div id="opcionMenus" *ngIf="rutaActual === 'menus'">
+  <h2 class="platosMenu">PRIMEROS PLATOS</h2>
+  <section>
+    <!-- recorro el array de productos filtrados y muestro cada uno de ellos -->
+    <!-- productosFiltrados es el array que obtengo del servicio pero filtrado por basico o especial-->
+    <ng-container  *ngFor="let producto of productosFiltrados">
+    <!-- si el producto tiene como orden 'primero' lo muestro -->
+    <div class="card" *ngIf="producto.orden === 'primero'">
+      <img src="../../../assets/{{ producto.imagen }}" alt="" />
+      -
+      <p> {{ producto.titulo }} </p>
+
+      <input
+        type="checkbox"
+        class="classCheckbox"
+        id="0"
+        value="0"
+      />Seleccionar
+      <br />
+    </div>
+  </ng-container>
+  </section>
+  <h2 class="platosMenu">SEGUNDOS PLATOS</h2>
+  <section>
+    <ng-container *ngFor="let producto of productosFiltrados">
+      <!-- si el producto tiene como orden 'segundo' lo muestro -->
+    <div class="card" *ngIf="producto.orden === 'segundo'">
+      <img src="../../../assets/{{ producto.imagen }}" alt="" />
+      -
+      <p> {{ producto.titulo }} </p>
+
+      <input
+        type="checkbox"
+        class="classCheckbox"
+        id="0"
+        value="0"
+      />Seleccionar
+      <br />
+    </div>
+    </ng-container>
+  </section>
+  <h2 class="platosMenu">POSTRES</h2>
+  <section>
+    <ng-container *ngFor="let producto of productosFiltrados">
+      <!-- si el producto tiene como orden 'postre' lo muestro -->
+      <div class="card" *ngIf="producto.orden === 'postre'">
+        <img src="../../../assets/{{ producto.imagen }}" alt="" />
+        -
+        <p> {{ producto.titulo }} </p>
+  
+        <input
+          type="checkbox"
+          class="classCheckbox"
+          id="0"
+          value="0"
+        />Seleccionar
+        <br />
+      </div>
+    </ng-container>
+  </section>
+</div>
+

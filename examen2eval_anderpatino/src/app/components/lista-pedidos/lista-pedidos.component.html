@@ -1,0 +1,39 @@
+<section class="listaPedido">
+  <h2>LISTA DE PLATOS/MENUS SOLICITADOS</h2>
+  <hr />
+  <table class="table" id="platosPedidos">
+    <thead class="thead-dark">
+      <tr>
+        <th>Plato/Menu</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- recorro el array de productos y muestro cada uno de ellos -->
+      <tr *ngFor="let producto of productos">
+        <td>
+          <p class="fw-normal mb-1"> {{ producto.titulo }} </p>
+        </td>
+        <td></td>
+        <td> {{ producto.precio }} </td>
+        <td>
+          <div class="d-flex align-items-center">
+            <img
+              src="../../../assets/{{ producto.imagen }}"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- al hacer click llamo a la funcion limpiarLista -->
+  <button id="btnAnularPedido" (click)="limpiarLista()">Anular Pedido</button>
+
+  <!-- link a home mediante routing-->
+  <button [routerLink]="['']" id="btnCancelar">CANCELAR</button>
+</section>
